@@ -4,18 +4,20 @@ require 'sinatra/jsonp'
 set :database, 'sqlite:///todo_sinatra.db'
 
 class Event < ActiveRecord::Base
-  validates_presence_of :action
+  validates_presence_of :name
+  validates_presence_of :uid
 end
 
 get '/' do
   erb :home
 end
 
-post "/" do
+get "/event" do
   e = Event.new
-  e.event_type = params[:event_type]
+  e.name = params[:name]
+  e.uid = params[:uid]
   e.save
-  redirect "/"
+  redirect "/event"
 end
 
 get "/test" do
