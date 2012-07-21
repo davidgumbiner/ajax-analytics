@@ -3,6 +3,7 @@ class LogEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.text :name
       t.text :uid
+    end
   end
 
   def down

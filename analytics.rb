@@ -15,9 +15,11 @@ end
 get "/event" do
   e = Event.new
   e.name = params[:name]
-  e.uid = params[:uid]
+  e.uid = request.cookies["user_id"]
   e.save
-  redirect "/event"
+  
+  #if e.save = false
+  #  
 end
 
 get "/test" do
