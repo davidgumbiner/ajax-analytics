@@ -17,9 +17,6 @@ get "/event" do
   e.name = params[:name]
   e.uid = request.cookies["user_id"]
   e.save
-  
-  #if e.save = false
-  #  
 end
 
 get "/test" do

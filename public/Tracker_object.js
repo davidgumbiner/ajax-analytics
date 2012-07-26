@@ -1,6 +1,6 @@
 function Tracker() {
 	this.track = function(name, callback) {
-		$.get("/event", { name: name },
+		$.getJSON("/event", { name: name },
 		   function(data){
 			return false;
 		   });
